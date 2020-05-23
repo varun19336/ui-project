@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <title>My space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.jpg" type="image/icon type">
+    <link rel="stylesheet" type="text/css" href="login&register.css">
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body><br><br><br><br><br><br>
+    <h1 id='c'>Welcome...!</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <form action='/myspace.html' id='myform' onsubmit="return func()">
+                    <fieldset>
+                        <table>
+                            <tr>
+                                <td id='l'><b>Username</b></td>
+                                <td>:</td>
+                                <td id='l'><input type='text' id='name' required autofocus><span style="display: none;" id="nam">*only alphabets</span><br></td>
+                            </tr>
+                            <tr>
+                                <td id='l'><b>Password</b></td>
+                                <td>:</td>
+                                <td id='l'><input type='text' id='password' required>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td><button value='submit' id='c' formaction="myspace.html">submit</button></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td> <a href="register page.html" id='e'>Go to registor page →</a></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+    <script>
+        function allLetter(inputtxt) {
+            var letters = /^[A-Za-z]+$/;
+            return (inputtxt.match(letters))
+        }
+
+        function func() {
+            var count = 0;
+            if (allLetter(document.getElementById("name").value)) {
+                count++;
+                document.getElementById("nam").style.display = "none";
+            } else {
+                document.getElementById("nam").style.display = "inline";
+            }
+            if (count === 1) {
+                return true;
+            } else {
+                alert("Error!,Try Again.");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

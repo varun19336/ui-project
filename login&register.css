@@ -1,0 +1,73 @@
+#l {
+    text-align: left;
+}
+
+#c {
+    text-align: center;
+}
+
+#r {
+    text-align: right;
+}
+
+#e {
+    text-align: end;
+}
+
+h1 {
+    font-size: 250%;
+    color: black
+}
+
+a {
+    color: rgb(3, 0, 0)
+}
+
+fieldset {
+    border-color: rgb(186, 214, 153);
+    display: block;
+    margin-top: 0px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 20px groove (internal value);
+}
+
+table {
+    height: 50%;
+    width: 100%;
+    border-spacing: 20px;
+    font-size: 130%;
+    color: rgb(14, 0, 0);
+}
+
+input[type=date],
+input[type=text],
+input[type=textarea],
+select {
+    width: 100%;
+    padding: 10px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.384);
+    color: white;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: rgba(219, 219, 219, 0.459);
+}
+
+button.btn.hover::before {
+    border-color: black;
+}
+
+body {
+    background-image: url(bgimage.png);
+    background-size: cover;
+}

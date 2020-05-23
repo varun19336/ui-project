@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <title>My space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.jpg" type="image/icon type">
+    <link rel="stylesheet" type="text/css" href="login&register.css">
+</head>
+
+<body>
+    <h1 id='c'><u>Register</u></h1>
+    <form method='POST' action='/myspace.html' id='myform' onsubmit="return func()">
+        <fieldset>
+            <legend>
+                <h1>User's Information</h1>
+            </legend>
+            <table>
+                <tr>
+                    <td id='l'>First Name</td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id="first name" value="" required autofocus><span style="display: none;" id="fnam">*only alphabets</span><br></div>
+                </tr>
+                <tr>
+                    <td id='l'>Last Name </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id="last name" value="" required><span style="display: none;" id="lnam">*only alphabets</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>Gender </td>
+                    <td>:</td>
+                    <td id='l'><input type="radio">Male<input type="radio">Female</td>
+                </tr>
+                <tr>
+                    <td id='l'>Phone Number</td>
+                    <td>:</td>
+                    <td id='l'><select style="width:20%;">
+                        <option value="+91">+91</option>
+                        <option value="+1">+1</option>
+                        <option value="+61">+61</option>
+                        <option value="+33">+33</option>
+                    </select><input type="text" id='phone number' style="width:80%" required><span style="display: none;" id="pno">*only 10 numbers</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>E-mail </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='email' required></td>
+                </tr>
+                <tr>
+                    <td id='l'>User Name </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='user name' required><span style="display: none;" id="unam">*only alphabets</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>Password</td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='password' required></td>
+                </tr>
+                <tr>
+                    <td id='l'>Verify Password</td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='vpassword' required><span style="display: none;" id="vp">*Password does't match</span><br></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td id='c'><button value="Submit" formaction="myspace.html">Submit</button></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <script>
+        function allLetter(inputtxt) {
+            var letters = /^[A-Za-z]+$/;
+            return (inputtxt.match(letters))
+        }
+
+        function allnumber(inputtxt) {
+            var letters = /^[0-9]+$/;
+            return (inputtxt.match(letters))
+        }
+
+        function func() {
+            var count = 0;
+            if (allLetter(document.getElementById("first name").value)) {
+                count++;
+                document.getElementById("fnam").style.display = "none";
+            } else {
+                document.getElementById("fnam").style.display = "inline";
+            }
+            if (allLetter(document.getElementById("last name").value)) {
+                count++;
+                document.getElementById("lnam").style.display = "none";
+            } else {
+                document.getElementById("lnam").style.display = "inline";
+            }
+            if (allnumber(document.getElementById("phone number").value)) {
+                count++;
+                document.getElementById("pno").style.display = "none";
+            } else {
+                document.getElementById("pno").style.display = "inline";
+            }
+            if (allLetter(document.getElementById("user name").value)) {
+                count++;
+                document.getElementById("unam").style.display = "none";
+            } else {
+                document.getElementById("unam").style.display = "inline";
+            }
+            if (document.getElementById("password").value == document.getElementById("vpassword").value) {
+                count++;
+                document.getElementById("vp").style.display = "none";
+            } else {
+                document.getElementById("vp").style.display = "inline";
+            }
+            if (count === 5) {
+                return true;
+            } else {
+                alert("Error!,Try Again.");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

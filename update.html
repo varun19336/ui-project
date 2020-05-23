@@ -1,0 +1,200 @@
+<html>
+
+<head>
+    <title>My space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.jpg" type="image/icon type">
+    <link rel="stylesheet" type="text/css" href="login&register.css">
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form method='POST' action='/Aboutme.html' id='myform' onsubmit="return func()">
+        <fieldset>
+            <legend>
+                <h1>Bio-Data</h1>
+            </legend>
+            <table>
+
+                <tr>
+                    <td id='l'>First Name</td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id="first name" value="" required autofocus><span style="display: none;" id="fnam">*only alphabets</span><br></div>
+                </tr>
+                <tr>
+                    <td id='l'>Last Name </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id="last name" value="" required><span style="display: none;" id="lnam">*only alphabets</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>Gender </td>
+                    <td>:</td>
+                    <td id='l'><input type="radio">Male<input type="radio">Female</td>
+                </tr>
+                <tr>
+                    <td id='l'>DOB </td>
+                    <td>:</td>
+                    <td id='l'><input type="date" id="birthday" name="birthday" required><span style="display: none;" id="dob">*only numbers</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>Martial status </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='martial status' required><span style="display: none;" id="martial">*only alphabets</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>Father's Name </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='fathers name' required><span style="display: none;" id="fathernam">*only alphabets</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>Mother's Name </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='mothers name' required><span style="display: none;" id="mothernam">*only alphabets</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>Siblings </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='siblings' required><span style="display: none;" id="siblingnam">*only alphabets</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>Phone Number</td>
+                    <td>:</td>
+                    <td id='l'><select style="width:20%;" required>
+                            <option value="+91">+91</option>
+                            <option value="+1">+1</option>
+                            <option value="+61">+61</option>
+                            <option value="+33">+33</option>
+                        </select><input type="text" id='phone no' style="width:80%"><span style="display: none;" id="pno">*only 10 numbers</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>E-mail </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='email' required></td>
+                </tr>
+                <tr>
+                    <td id='l'>Profession </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='profession' required><span style="display: none;" id="prof">*only alphabets</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>Country </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='country' required><span style="display: none;" id="cont">*only alphabets</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>State </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='state' required><span style="display: none;" id="stat">*only alphabets</span><br></td>
+                </tr>
+                <tr>
+                    <td id='l'>Address </td>
+                    <td>:</td>
+                    <td id='l'><input type="text" id='address' required></td>
+                </tr>
+                <tr>
+                    <td id='l'>Hobbies </td>
+                    <td>:</td>
+                    <td id='l'><input type="textarea" id='hobbies' rows="4" cols="8" required></td>
+                </tr>
+                <tr>
+                    <td id='l'>Married</td>
+                    <td>:</td>
+                    <td id='l'><input type="radio" required>Yes<input type="radio" required>No</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td id='c'><button value="Submit" id='submit'>Submit</button></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <script>
+        function allLetter(inputtxt) {
+            var letters = /^[A-Za-z]+$/;
+            return (inputtxt.match(letters))
+        }
+
+        function allnumber(inputtxt) {
+            var letters = /^[0-9]+$/;
+            return (inputtxt.match(letters))
+        }
+
+        function func() {
+            var count = 0;
+            if (allLetter(document.getElementById("first name").value)) {
+                count++;
+                document.getElementById("fnam").style.display = "none";
+            } else {
+                document.getElementById("fnam").style.display = "inline";
+            }
+            if (allLetter(document.getElementById("last name").value)) {
+                count++;
+                document.getElementById("lnam").style.display = "none";
+            } else {
+                document.getElementById("lnam").style.display = "inline";
+            }
+            if (allLetter(document.getElementById("martial status").value)) {
+                count++;
+                document.getElementById("martial").style.display = "none";
+            } else {
+                document.getElementById("martial").style.display = "inline";
+            }
+            if (allLetter(document.getElementById("fathers name").value)) {
+                count++;
+                document.getElementById("fathernam").style.display = "none";
+            } else {
+                document.getElementById("fathernam").style.display = "inline";
+            }
+            if (allLetter(document.getElementById("mothers name").value)) {
+                count++;
+                document.getElementById("mothernam").style.display = "none";
+            } else {
+                document.getElementById("mothernam").style.display = "inline";
+            }
+            if (allLetter(document.getElementById("siblings").value)) {
+                count++;
+                document.getElementById("siblingnam").style.display = "none";
+            } else {
+                document.getElementById("siblingnam").style.display = "inline";
+            }
+            if (allnumber(document.getElementById("phone no").value) && document.getElementById("phone no").value.length == 10) {
+                count++;
+                document.getElementById("pno").style.display = "none";
+            } else {
+                document.getElementById("pno").style.display = "inline";
+            }
+            if (allLetter(document.getElementById("profession").value)) {
+                count++;
+                document.getElementById("prof").style.display = "none";
+            } else {
+                document.getElementById("prof").style.display = "inline";
+            }
+            if (allLetter(document.getElementById("country").value)) {
+                count++;
+                document.getElementById("cont").style.display = "none";
+            } else {
+                document.getElementById("cont").style.display = "inline";
+            }
+            if (allLetter(document.getElementById("state").value)) {
+                count++;
+                document.getElementById("stat").style.display = "none";
+            } else {
+                document.getElementById("stat").style.display = "inline";
+            }
+            if (count === 10) {
+                alert("Form Submitted Successfully!");
+                return true;
+            } else {
+                alert("Error!,Try Again.");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
