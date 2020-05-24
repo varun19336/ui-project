@@ -118,19 +118,12 @@
                 </div>
                 <div class='col-sm-2'>
                     <img src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png' id='img' width=150 height=170><br><br>
-                    <input type="file" id=image class=file><br>
-                    <b><input type="reset" id=reset class=reset onclick="func()"></b>
+                    <input type="file" accept="image/*" class="file" id="file" onchange="loadFile(event)"><br>
                     <script>
-                        function func() {
-                            var x = document.getElementById('image').value;
-                            z = x.substring(40, );
-                            var y = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png'
-                            if (x != "") {
-                                document.getElementById('img').src = 'file:///C:/Users/Varun%20Musunuru/Pictures/'+ z;
-                            } else {
-                                document.getElementById('img').src = '' + y;
-                            }
-                        }
+                        var loadFile = function(event) {
+                            var image = document.getElementById('img');
+                            image.src = URL.createObjectURL(event.target.files[0]);
+                        };
                     </script>
                 </div>
             </div>
