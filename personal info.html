@@ -87,9 +87,25 @@
             <legend>
                 <h1>Personal info</h1>
             </legend>
-            <h3 style="font-family:Georgia, 'Times New Roman', Times, serif;word-spacing: 10;font-size: 200%;">I was born in Amaravathi, Anhra pradesh,India. Even though my native place is Srisailam i spend my childhood i.e. first 3 years of my life in my grand parents village. I enjoyed a lot at that time, made so many memories there. I completed
+            <h3 id='para1' style="font-family:Georgia, 'Times New Roman', Times, serif;word-spacing: 10;font-size: 200%;">I was born in Amaravathi, Anhra pradesh,India. Even though my native place is Srisailam i spend my childhood i.e. first 3 years of my life in my grand parents village. I enjoyed a lot at that time, made so many memories there. I completed
                 my primary schooling in Srisailam itself in D.A.V school and my high school in Narayana school in guntur campus. In chaitanya college i completed my 11th and 12th standards. Now i am doing computer science engeneering in Amrita Viswa Vidyapeetam,
                 Amrithapuri campus.</h3>
+            <button id="button" type="button" onclick="editParagraph()">Edit</button>
+            <p id="para2" style="font-size:200% "><b></b></p>
+            <script>
+                function editParagraph() {
+                    var x = document.getElementById("para1");
+                    if (x.contentEditable == "true") {
+                        x.contentEditable = "false";
+                        document.getElementById('para2').innerHTML = '';
+                        document.getElementById('button').innerHTML = "Edit";
+                    } else {
+                        x.contentEditable = "true";
+                        document.getElementById('para2').innerHTML = 'Now you can edit';
+                        document.getElementById('button').innerHTML = "Save";
+                    }
+                }
+            </script>
         </fieldset>
     </form>
 </body>
